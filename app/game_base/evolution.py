@@ -42,6 +42,8 @@ def format_number(n):
 
 class EvoManager:
     def __init__(self, data_dir, configure):
+        if not os.path.exists(data_dir + 'data'):
+            os.mkdir(data_dir + 'data')
         self.data_dir = data_dir
         self.configure = configure
         self.data = {}
