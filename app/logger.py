@@ -1,4 +1,5 @@
 import logging
+import os
 import re
 from logging.handlers import TimedRotatingFileHandler
 
@@ -21,6 +22,8 @@ def filter_(record):
     return True
 
 
+if not os.path.exists('log'):
+    os.mkdir('log')
 logger = logging.getLogger('werkzeug')
 handler = TimedRotatingFileHandler(filename='log/web.log', when='midnight', backupCount=30, encoding='utf-8')
 handler.suffix = '%Y-%m-%d.log'
