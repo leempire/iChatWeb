@@ -1,0 +1,44 @@
+
+
+.h0 {
+    color: black;
+}
+
+.b0 {
+    border-style: solid;
+    border-color: gray;
+    background-color: rgba(94, 53, 53, 0.6);
+}
+
+.h1 {
+    color: rgb(237, 255, 155);
+}
+
+.b1 {
+    border-style: solid;
+    border-color: white;
+    background-color: rgb(104, 220, 244);
+}
+
+.b2 {
+    color: white;
+    border-style: solid;
+    border-color: white;
+    background-color: rgb(254, 153, 2);
+    font-family: KaiTi;
+}
+
+.h2 {
+    color: white;
+}
+
+.h3 {
+    color: rgb(230, 220, 70);
+}
+
+.b3 {
+    color: wheat;
+    border-style: solid;
+    border-color: gray;
+    background-color: black;
+}

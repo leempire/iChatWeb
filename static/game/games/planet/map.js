@@ -1,0 +1,1 @@
+addLoadEvent(function(){setMapItem('planet')})

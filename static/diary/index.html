@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ch-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iChat</title>
+    <script src="../base.js"></script>
+    <script src="./base.js"></script>
+    <script src="./index.js"></script>
+    <link href="./index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">首页</a>
+        <a href="javascript:moreOperation()">更多操作</a>
+    </nav>
+    <iframe name="frame" hidden></iframe>
+
+    <div id="o1">
+        <div class="box">
+            添加标签
+            <form action="/diary/addCate/" method="post" target="frame">
+                <input type="text" name="name" placeholder="标签名" maxlength="20">
+                <input type="text" name="code" class="code" hidden>
+                <button type="submit" onclick="setCode()">
+                    添加
+                </button>
+            </form>
+        </div>
+
+        <div class="box">
+            删除标签
+            <form action="/diary/delCate/" method="post" target="frame">
+                <div class="cate"></div>
+                <input type="text" name="code" class="code" hidden>
+                <button type="submit" onclick="setCode()">
+                    删除
+                </button>
+            </form>
+        </div>
+
+        <div class="box">
+            分享标签
+            <form action="/diary/shareCate/" method="post" target="frame">
+                <div class="cate"></div>
+                <input type="text" name="code" class="code" hidden>
+                <input type="text" name="account" placeholder="用户名或邮箱">
+                <button type="submit" onclick="setCode()">
+                    分享
+                </button>
+            </form>
+        </div>
+
+        <div class="box">
+            新增日记
+            <form action="/diary/addDiary/" method="post" target="frame">
+                <input type="text" name="title" placeholder="标题" maxlength="40">
+                <div class="cate"></div>
+                <input type="date" name="time">
+                <textarea name="content" placeholder="正文"></textarea>
+                <input type="text" name="code" class="code" hidden>
+                <button type="submit" onclick="setCode()">
+                    提交
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="box">
+        我的日记
+        <div class="cate" id="selectByCate" onchange="fetchByCate()"></div>
+        <div class="myDiary"></div>
+    </div>
+
+</body>
+
+</html>

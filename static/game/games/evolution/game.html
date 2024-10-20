@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ch-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iChat</title>
+    <script src="../../../base.js"></script>
+    <script>checkLogged()</script>
+    <script src="./bigNumber.js"></script>
+    <script src="./base.js"></script>
+    <script src="./update.js"></script>
+    <script src="./setState.js"></script>
+    <link href="./base.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <nav>
+        <a href="../../../index.html">主页</a>
+        <a href="../../index.html">游戏</a>
+        <a href="./index.html">公告</a>
+        <a href="./help.html">帮助</a>
+        <a href="./rank.html">排行榜</a>
+        <a href="./introduction.html">攻略</a>
+    </nav>
+
+    <div id="topBar">
+        <table>
+            <thead>
+                <tr>
+                    <th onclick="switchState('items')">粒子</th>
+                    <th onclick="switchState('thunder')">雷电</th>
+                    <th onclick="switchState('dirt')">尘埃</th>
+                    <th onclick="switchState('wisdom')">智慧</th>
+                    <th onclick="switchState('dark')">暗物质</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="particle">-</td>
+                    <td class="thunderNum">-</td>
+                    <td class="dirt">-</td>
+                    <td class="wisdomNum">-</td>
+                    <td class="darkNum">-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="items"></div>
+    <div id="msg"></div>
+
+
+    <div id="info" class="info" hidden>
+        <div id="infoTitle"></div>
+        <div class="hr"></div>
+        <div class="speed">需要 <span id="infoNeed"></span></div>
+        <div class="hr"></div>
+        <div class="speed">获得
+            <input type="range" max="1000" id="infoBar" onchange="updateInfoBar()" />
+            <span id="infoGet"></span>
+        </div>
+        <div class="hr"></div>
+        <button onclick="infoConfirm()">确认</button>
+        <button onclick="infoHide()">取消</button>
+    </div>
+
+</body>
+
+</html>

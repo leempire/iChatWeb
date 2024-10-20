@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ch-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iChat</title>
+    <script src="../../../base.js"></script>
+    <script>checkLogged()</script>
+    <script src="./introduction.js"></script>
+    <link href="./base.css" rel="stylesheet" type="text/css" />
+    <link href="./introduction.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <nav>
+        <a href="../../../index.html">主页</a>
+        <a href="../../index.html">游戏</a>
+        <a href="./index.html">公告</a>
+        <a href="./help.html">帮助</a>
+        <a href="./rank.html">排行榜</a>
+        <a href="./introduction.html">攻略</a>
+    </nav>
+    <div id="msg">
+        <div class="item">
+            <div class="title">攻略</div>
+            <div class="speed">
+                1. 点击下面的标题即可查看相应攻略，再次点击标题收起攻略； <br>
+                2. 欢迎向管理员投稿攻略，投稿成功将奖励2h智慧收益。
+            </div>
+        </div>
+    </div>
+    <div id="items">
+        <div class="item">
+            <div class="title" onclick="getItem(0)" id="itemTitle0">
+                标题
+            </div>
+            <div class="speed" id="item0" hidden>
+                1. 修改了部分名词及显示。
+            </div>
+        </div>
+    </div>
+    <button id="centerButton" onclick="document.location.href='./game.html'">开始游戏</button>
+
+    <div style="height: 300px;"></div>
+
+</body>
+
+</html>

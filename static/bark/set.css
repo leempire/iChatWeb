@@ -1,0 +1,85 @@
+#box {
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 10px 10px;
+    border-width: 3px;
+    border-color: black;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+#files {
+    height: 60vh;
+    padding-bottom: 4.4em;
+    overflow: auto;
+}
+
+.headline {
+    height: 2.2em;
+    border-bottom: 2px solid gray;
+    font-weight: bold;
+}
+
+.line {
+    padding: 0;
+    height: 2.2em;
+    line-height: 2.2em;
+    border-bottom: 1px solid gray;
+}
+
+.line:hover {
+    background-color: rgb(231, 240, 248);
+}
+
+.cell {
+    display: inline-block;
+    overflow: auto;
+    height: 100%;
+    line-height: 2.2em;
+}
+
+.id {
+    text-align: center;
+    width: 12%;
+}
+
+.icon {
+    width: 12%;
+    text-align: center;
+}
+
+.icon img {
+    margin-top: 5px;
+}
+
+.filename {
+    text-align: left;
+    width: 25%;
+}
+
+.filename input {
+    width: 90%;
+}
+
+.operation {
+    text-align: center;
+    width: 45%;
+}
+
+::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+button {
+    border: 0;
+    color: #0097ff;
+    font-weight: bold;
+    background-color: rgba(70, 198, 212, 0);
+    padding: 3px 5px 3px 5px;
+    margin: 0 2px;
+}
+
+.add {
+    text-align: center;
+}

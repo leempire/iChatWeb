@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ch-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dory</title>
+    <link href="./base.css" rel="stylesheet" type="text/css" />
+    <link href="./reader.css" rel="stylesheet" type="text/css" />
+    <script src="../base.js"></script>
+    <script src="./reader.js"></script>
+    <script src="./base.js"></script>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">主页</a>
+        <a href="./index.html">书架</a>
+        <a href="./city.html">书城</a>
+        <a href="./stat.html">统计</a>
+        <a href="./set.html">设置</a>
+        <a href="./listen.html">听书</a>
+    </nav>
+    <div class="switch">
+        <button onclick="switchChapter(-1)">上一章</button>
+        <button onclick="swtichToContent()" class="ml">目录</button>
+        <button onclick="switchChapter(1)">下一章</button>
+    </div>
+    <div>
+        <h1 id="title"></h1>
+    </div>
+    <div id="content" onfocus="recording()"></div>
+    <div class="switch">
+        <button onclick="switchChapter(-1)">上一章</button>
+        <button onclick="swtichToContent()" class="ml">目录</button>
+        <button onclick="switchChapter(1)">下一章</button>
+    </div>
+    <div id="bottom">
+        <h4>滑动到底部一秒后自动跳转下一章</h4>
+    </div>
+    <div id="bottomInfo">
+        <h4>一秒后跳转下一章</h4>
+    </div>
+    <div id="autoRead" hidden>
+        <button class="autoReadAdjust" onclick="autoReadScroll(-0.5*window.innerHeight)">◀</button>
+        <button class="autoReadAdjust" onclick="autoReadAdjust(0.8)">-</button>
+        <button class="autoReadStart" onclick="autoRead()">| |</button>
+        <button class="autoReadAdjust" onclick="autoReadAdjust(1.2)">+</button>
+        <button class="autoReadAdjust" onclick="autoReadScroll(0.5*window.innerHeight)">▶</button>
+    </div>
+</body>
+
+</html>

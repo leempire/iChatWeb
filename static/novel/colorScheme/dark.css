@@ -1,0 +1,20 @@
+body {
+    background-color: rgb(26, 18, 10);
+    color: rgb(169, 162, 154);
+}
+
+a {
+    color: rgb(169, 162, 154);
+}
+
+a:hover {
+    background-color: rgb(26, 18, 10);
+}
+
+.hover:hover {
+    background-color: rgb(26, 18, 10);
+}
+
+title {
+    color: rgb(169, 162, 154);
+}

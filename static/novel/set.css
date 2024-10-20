@@ -1,0 +1,51 @@
+#setBox {
+    text-align: center;
+}
+
+.table {
+    display: inline-block;
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 10px 10px;
+    border-width: 3px;
+    border-color: gray;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+.column {
+    white-space: nowrap;
+    text-align: center;
+    display: inline-block;
+    width: 8em;
+    overflow: auto;
+    border-right: 1px solid gray;
+}
+
+.headRow {
+    height: 2.2em;
+    line-height: 2.2em;
+    border-bottom: 2px solid gray;
+    font-weight: bold;
+}
+
+.row {
+    height: 2.2em;
+    line-height: 2.2em;
+    border-bottom: 1px solid gray;
+}
+
+input,
+select {
+    height: 1.7em;
+    line-height: 1.7em;
+    width: 8em;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.column::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}

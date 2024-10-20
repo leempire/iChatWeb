@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+#o1 {
+    display: none;
+}
+
+.box {
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px 10px;
+    padding: 10px 0;
+}
+
+.diaryForm {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0 5px;
+}
+
+.diary {
+    height: 2em;
+    line-height: 2em;
+    border-bottom: 1px solid black;
+}
+
+textarea[name=content] {
+    display: block;
+    line-height: 1.5em;
+    height: 15em;
+    width: 90%;
+}
+
+input[type=checkBox]{
+    margin-right: 5px;
+}
+
+.diaryHead {
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+
+.headCell {
+    text-align: center;
+    font-weight: bold;
+}
+
+.diaryTitle {
+    padding: 0 5px;
+    white-space: nowrap;
+    display: inline-block;
+    width: 40%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    border-right: 1px solid black;
+}
+
+.diaryDate {
+    padding: 0 5px;
+    white-space: nowrap;
+    display: inline-block;
+    width: 30%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    border-right: 1px solid black;
+}
+
+.open {
+    padding: 0 5px;
+    white-space: nowrap;
+    display: inline-block;
+    width: 15%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    text-align: center;
+}

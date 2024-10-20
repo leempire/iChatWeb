@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url(./source/bg.png);
+    color: white;
+    text-align: center;
+}
+
+nav {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+nav a {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    background-color: rgb(231, 240, 248);
+}
+
+#topBar {
+    display: inline-block;
+    width: 90%;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(37, 174, 243, 0.6);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+table {
+    display: inline-block;
+}
+
+table td,
+table th {
+    width: 15%;
+}
+
+#msg {
+    font-size: large;
+    text-align: left;
+    padding: 5px 20px;
+}
+
+#msg .item {
+    border: 2px solid white;
+    background-color: rgba(37, 174, 243, 0.6);
+}
+
+#msg .title {
+    color: white;
+}
+
+#msg .speed {
+    color: white;
+}
+
+#items {
+    margin-top: 10px;
+    text-align-last: left;
+    padding: 5px 20px;
+    overflow: auto;
+}
+
+.item {
+    line-height: 1.5em;
+    border: 2px solid rgb(50, 100, 142);
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: rgba(25, 58, 78, 0.6);
+}
+
+.itemImg {
+    display: flex;
+    align-items: center;
+}
+
+.item img {
+    top: 50%;
+    max-height: 100%;
+    display: inline-block;
+}
+
+.item .img {
+    float: left;
+    height: 4.5625em;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.item .data {
+    display: inline-block;
+}
+
+.title {
+    color: rgb(175, 219, 249);
+    font-weight: bolder;
+}
+
+.speed {
+    font-size: small;
+    color: rgb(92, 153, 189);
+}
+
+button {
+    border: 2px solid rgba(0, 0, 0, 0);
+    color: rgb(141, 195, 239);
+    background-color: rgba(0, 109, 207, 0.6);
+    padding: 0px 5px;
+    margin: 0 5px;
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.info {
+    width: 80%;
+    line-height: 1.8em;
+    text-align-last: left;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    position: fixed;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(0, 54, 102);
+}
+
+#centerButton {
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 20px;
+    position: fixed;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    font-size: x-large;
+}
+
+.hr {
+    border: 1px solid rgba(118, 118, 118, 0.4);
+}

@@ -1,0 +1,21 @@
+body {
+    background-color: #e8ffe8;
+    color: #0d141e;
+}
+
+a {
+    color: #0d141e;
+}
+
+a:hover {
+    color: #0d141e;
+    background-color: rgb(231, 240, 248);
+}
+
+.hover:hover {
+    background-color: rgb(231, 240, 248);
+}
+
+title {
+    color: #0d141e;
+}

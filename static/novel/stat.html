@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ch-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dory</title>
+    <link href="./base.css" rel="stylesheet" type="text/css" />
+    <link href="./reader.css" rel="stylesheet" type="text/css" />
+    <link href="./set.css" rel="stylesheet" type="text/css" />
+    <script src="../base.js"></script>
+    <script src="./base.js"></script>
+    <script src="./stat.js"></script>
+    <style>
+        .table {
+            width: 90%;
+        }
+
+        .column {
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">主页</a>
+        <a href="./index.html">书架</a>
+        <a href="./city.html">书城</a>
+        <a href="./stat.html">统计</a>
+        <a href="./set.html">设置</a>
+        <a href="./listen.html">听书</a>
+    </nav>
+    <div id="setBox">
+        <div class="table">
+            <div class="headRow">
+                <div class="column">书名</div>
+                <div class="column">
+                    <select id="bookName" onchange="stat()" style="width: 90%;"></select>
+                </div>
+            </div>
+            <div id="data">
+
+            </div>
+        </div>
+    </div>
+    <div id="bottom"></div>
+</body>
+
+</html>

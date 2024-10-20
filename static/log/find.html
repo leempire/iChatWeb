@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ch-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iChat</title>
+    <script src="../base.js"></script>
+    <script src="./find.js"></script>
+    <link href="./base.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <section>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="box">
+            <div class="circle" style="--x:0"></div>
+            <div class="circle" style="--x:1"></div>
+            <div class="circle" style="--x:2"></div>
+            <div class="circle" style="--x:3"></div>
+            <div class="circle" style="--x:4"></div>
+            <div class="container">
+                <div class="form">
+                    <span onclick="document.location.href='./index.html'">登录 </span>
+                    <span onclick="document.location.href='./register.html'">注册 </span>
+                    <span onclick="document.location.href='./find.html'" id="now">找回 </span>
+                    <span onclick="document.location.href='./alter.html'">修改 </span>
+                    <div class="inputBox">
+                        <input type="text" placeholder="邮箱" id="email">
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" value="确认" onclick="find()">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>

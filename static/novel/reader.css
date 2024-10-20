@@ -1,0 +1,67 @@
+.line {
+    text-indent: 2em;
+    line-height: 1.8em;
+}
+
+#content {
+    padding: 20px;
+}
+
+.switch {
+    text-align: center;
+}
+
+.ml {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+button {
+    background-image: none;
+    background-color: rgba(0, 0, 0, 0);
+    border-style: none;
+    font-size: large;
+    font-weight: bolder;
+}
+
+#bottom {
+    height: 400px;
+    text-align: center;
+}
+
+#bottom h4 {
+    margin-top: 50px;
+}
+
+#bottomInfo {
+    text-align: center;
+}
+
+#autoRead {
+    white-space: nowrap;
+    opacity: 0.5;
+    text-align: center;
+    position: fixed;
+    bottom: 5%;
+    width: 100%;
+}
+
+#autoRead button {
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: greenyellow;
+    border: 1px black solid;
+}
+
+.autoReadStart {
+    width: 2.6em;
+    height: 2.6em;
+    border-radius: 1.3em;
+}
+
+.autoReadAdjust {
+    height: 1.5em;
+    width: 2em;
+    border-radius: 5px;
+}

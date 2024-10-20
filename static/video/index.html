@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ch-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iChat</title>
+    <link href="./base.css" rel="stylesheet" type="text/css" />
+    <script src="../base.js"></script>
+    <script src="./base.js"></script>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">主页</a>
+    </nav>
+    <div id="title">
+        iChat播放器
+    </div>
+    <div id="bar">
+        <input type="text" id="videoUrl" placeholder="在此输入视频网址">
+        <button onclick="getUrl()">播放</button>
+    </div>
+    <div id="switch">
+        <a onclick="switchPin()">无法播放？点击这里</a>
+    </div>
+    <div id="videoFrame">
+        <iframe src="" frameborder="0" id="iframe"></iframe>
+    </div>
+    <div id="help">
+        在<a href="//v.qq.com">腾讯视频</a>、<a href="//bilibili.com">bilibili</a>等视频网站中找到想要观看的视频网址，将网址填入上面的输入框中，点击播放即可播放视频。
+    </div>
+</body>
+
+</html>

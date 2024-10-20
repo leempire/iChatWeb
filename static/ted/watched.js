@@ -1,0 +1,2 @@
+checkLogged();
+addLoadEvent(getVideosWatched);

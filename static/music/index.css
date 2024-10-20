@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    text-align: center;
+    color: #0d141e;
+    background-color: #fff;
+}
+
+nav {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+nav a {
+    color: #0d141e;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+input {
+    border: #0d141e solid 2px;
+    border-radius: 5px;
+}
+
+button {
+    color: #0097ff;
+    font-weight: bold;
+    background-color: rgba(70, 198, 212, 0);
+    padding: 3px 5px 3px 5px;
+    margin: 0 2px;
+}
+
+#box {
+    display: inline-block;
+    height: 60vh;
+    width: 90vw;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid #0d141e;
+}
+
+#result {
+    height: 100%;
+    overflow: auto;
+}
+
+.item {
+    white-space: nowrap;
+    height: 2.2em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.item:hover {
+    background-color: rgb(231, 240, 248);
+}
+
+.headRow:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.song {
+    text-align: left;
+    line-height: 2.2em;
+    padding: 0 5px;
+    display: inline-block;
+    height: 100%;
+    width: 30%;
+    overflow: auto;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.singer {
+    text-align: left;
+    line-height: 2.2em;
+    padding: 0 5px;
+    display: inline-block;
+    height: 100%;
+    width: 38%;
+    overflow: auto;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.operation {
+    line-height: 2.2em;
+    padding: 0 5px;
+    display: inline-block;
+    height: 100%;
+    width: 30%;
+    overflow: auto;
+}
+
+.headRow {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.headCell {
+    text-align: center;
+    border-width: 0;
+}
+
+::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}

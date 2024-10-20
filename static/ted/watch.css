@@ -1,0 +1,47 @@
+#title {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#videoUrl {
+    color: #3376f3;
+    background-color: #060c37;
+    border: 0;
+    border-radius: 8px;
+    width: 70vw;
+    height: 1.8em;
+    line-height: 1.8em;
+    padding: 0 5px;
+    font-size: large;
+}
+
+button {
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(20, 185, 255);
+    height: 1.8em;
+    font-size: large;
+}
+
+#switch {
+    margin-top: 10px;
+}
+
+#videoFrame {
+    height: 70vh;
+    width: 98vw;
+    margin: 20px 0;
+    text-align: center;
+}
+
+iframe {
+    height: 100%;
+    background-color: black;
+}
+
+#help {
+    line-height: 1.5em;
+}

@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    color: #eef0f4;
+    background-color: #262628;
+}
+
+nav {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#code {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 0;
+    width: 0;
+}
+
+#box {
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 10px 10px;
+    border-width: 3px;
+    border-color: white;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+#files {
+    height: 60vh;
+    padding-bottom: 4.4em;
+    overflow: auto;
+}
+
+.headline {
+    height: 2.2em;
+    border-bottom: 2px solid gray;
+    font-weight: bold;
+}
+
+.line {
+    height: 2.2em;
+    border-bottom: 1px solid gray;
+}
+
+.line:hover {
+    background-color: rgb(39, 47, 55);
+}
+
+.cell {
+    display: inline-block;
+    overflow: auto;
+    height: 100%;
+    line-height: 2.2em;
+    padding-left: 5px;
+}
+
+.id {
+    text-align: center;
+    width: 8%;
+}
+
+.filename {
+    width: 55%;
+}
+
+#files .filename {
+    border-right: 1px solid white;
+}
+
+.operation {
+    text-align: center;
+    width: 32%;
+}
+
+::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+button {
+    color: #0097ff;
+    font-weight: bold;
+    background-color: rgba(70, 198, 212, 0);
+    padding: 3px 5px 3px 5px;
+    margin: 0 2px;
+}
+
+#upload {
+    text-align: center;
+}

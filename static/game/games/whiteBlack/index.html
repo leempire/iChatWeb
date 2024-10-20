@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ch-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>iChat</title>
+    <link href="../../base.css" rel="stylesheet" type="text/css" />
+    <link href="./index.css" rel="stylesheet" type="text/css" />
+    <script src="../../../base.js"></script>
+    <script>checkLogged()</script>
+    <script src="./index.js"></script>
+
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=0.5, maxmum-scale=1.0, minimum-scale=0.3">
+
+</head>
+
+<body>
+    <nav>
+        <a href="../../../index.html">主页</a>
+        <a href="../../index.html">游戏</a>
+    </nav>
+
+
+    <div class="box">
+        <div class="desk" id="deck"></div>
+        <div id="console">
+            <div id="side1" class="cbox">
+                <span>0</span>
+                <div class="black"></div>
+            </div>
+            <div id="side2" class="cbox">
+                <span>0</span>
+                <div class="white"></div>
+            </div>
+            <div id="play" class="button" onclick="reset()">重置</div>
+            <div id="aiButton">AI（关）</div>
+        </div>
+    </div>
+
+
+    <div style="height: 300px;"></div>
+
+</body>
+
+</html>

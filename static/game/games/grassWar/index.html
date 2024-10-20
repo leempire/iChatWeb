@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ch-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iChat</title>
+    <link href="../../base.css" rel="stylesheet" type="text/css" />
+    <script src="../../../base.js"></script>
+    <script>checkLogged()</script>
+</head>
+
+<body>
+    <nav>
+        <a href="../../../index.html">主页</a>
+        <a href="../../index.html">游戏</a>
+        <a href="./index.html">介绍</a>
+        <a href="./download.html">下载游戏</a>
+    </nav>
+
+    <h2>操作说明：</h2>
+    <p>1. 移动鼠标，角色会朝着鼠标的方向前进，被敌人触碰会损失生命；</p>
+    <p>2. 角色会朝着鼠标方向自动发射子弹，当距离达到子弹的追踪范围时，子弹将朝着敌人的方向发射；</p>
+    <p>3. 按空格键可以额外发射一级子弹；</p>
+    <p>4. 随着时间推移，敌人的属性会增加，种类也会增多；</p>
+    <p>5. 按数字1-4可以强化角色的攻击力、移动速度、生命值、子弹等级，强化所需的金币数量在屏幕左上角相应括号内；</p>
+    <p>6. 按P键暂停/开始，按F键全屏/取消全屏，按Q键退出。</p>
+
+    <h2>敌人图鉴：</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>敌人名称</th>
+                <th>开始出现时间</th>
+                <th>基础生命</th>
+                <th>移动速度</th>
+                <th>金币点数</th>
+                <th>出现频率</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>北极公主</th>
+                <th>开局</th>
+                <th>100</th>
+                <th>80</th>
+                <th>10</th>
+                <th>5</th>
+            </tr>
+            <tr>
+                <th>罪恶之王</th>
+                <th>1分钟</th>
+                <th>400</th>
+                <th>40</th>
+                <th>50</th>
+                <th>15</th>
+            </tr>
+            <tr>
+                <th>无畏骑士</th>
+                <th>2分钟</th>
+                <th>600</th>
+                <th>60</th>
+                <th>80</th>
+                <th>20</th>
+            </tr>
+            <tr>
+                <th>幽能剑客</th>
+                <th>3分钟</th>
+                <th>300</th>
+                <th>200</th>
+                <th>80</th>
+                <th>20</th>
+            </tr>
+            <tr>
+                <th>黄金女王</th>
+                <th>4分钟</th>
+                <th>1000</th>
+                <th>100</th>
+                <th>100</th>
+                <th>20</th>
+            </tr>
+            <tr>
+                <th>蓝月神姬</th>
+                <th>5分钟</th>
+                <th>1500</th>
+                <th>200</th>
+                <th>150</th>
+                <th>20</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>子弹图鉴：</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>子弹等级</th>
+                <th>飞行速度</th>
+                <th>基础伤害</th>
+                <th>追踪范围</th>
+                <th>发射频率</th>
+                <th>攻击特效</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>一级</th>
+                <th>800</th>
+                <th>3</th>
+                <th>250</th>
+                <th>0.5</th>
+                <th>无</th>
+            </tr>
+            <tr>
+                <th>二级</th>
+                <th>600</th>
+                <th>8</th>
+                <th>600</th>
+                <th>0.5</th>
+                <th>减速</th>
+            </tr>
+            <tr>
+                <th>三级</th>
+                <th>300</th>
+                <th>20</th>
+                <th>2000</th>
+                <th>1</th>
+                <th>追踪</th>
+            </tr>
+            <tr>
+                <th>四级</th>
+                <th>800</th>
+                <th>15</th>
+                <th>600</th>
+                <th>1</th>
+                <th>爆炸</th>
+            </tr>
+            <tr>
+                <th>五级</th>
+                <th>1000</th>
+                <th>15</th>
+                <th>600</th>
+                <th>1</th>
+                <th>穿透</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>攻击特效说明：</h2>
+    <p>1. 减速：每击中一次，减少敌人20%移动速度，减速效果可叠加，最低减少至16；</p>
+    <p>2. 追踪：实时调整方向，瞄准最近的目标；</p>
+    <p>3. 爆炸：击中敌人后爆炸，对300范围内的敌人造成50%的爆炸伤害；</p>
+    <p>4. 穿透：可穿透敌人，每穿透一个敌人，伤害提升20%.</p>
+
+    <h2>更新说明</h2>
+    <h4>v01</h4>
+    <p>1. 测试版本。</p>
+
+    <div style="height: 300px;"></div>
+
+</body>
+
+</html>

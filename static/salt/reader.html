@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ch-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iChat</title>
+    <script src="../base.js"></script>
+    <script src="./base.js"></script>
+    <link rel="stylesheet" href="../base.css">
+    <link rel="stylesheet" href="../novel/base.css">
+    <link rel="stylesheet" href="../novel/reader.css">
+    <script>getText()</script>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">主页</a>
+        <a href="./index.html">推荐</a>
+    </nav>
+    <div class="switch">
+        <button onclick="switchChapter(-1)">上一篇</button>
+        <button onclick="swtichToContent()" class="ml">目录</button>
+        <button onclick="switchChapter(1)">下一篇</button>
+    </div>
+    <div>
+        <h1 id="title"></h1>
+    </div>
+    <div id="content" onfocus="recording()"></div>
+    <div class="switch">
+        <button onclick="switchChapter(-1)">上一篇</button>
+        <button onclick="swtichToContent()" class="ml">目录</button>
+        <button onclick="switchChapter(1)">下一篇</button>
+    </div>
+    <div id="bottom">
+        <h4></h4>
+    </div>
+    <div id="bottomInfo">
+        <h4></h4>
+    </div>
+</body>
+
+</html>

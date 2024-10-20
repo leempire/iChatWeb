@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ch-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dory</title>
+    <link href="./base.css" rel="stylesheet" type="text/css" />
+    <link href="./reader.css" rel="stylesheet" type="text/css" />
+    <link href="./set.css" rel="stylesheet" type="text/css" />
+    <link href="./listen.css" rel="stylesheet" type="text/css" />
+    <script src="../base.js"></script>
+    <script src="./base.js"></script>
+    <script src="./listen.js"></script>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">主页</a>
+        <a href="./index.html">书架</a>
+        <a href="./city.html">书城</a>
+        <a href="./stat.html">统计</a>
+        <a href="./set.html">设置</a>
+        <a href="./listen.html">听书</a>
+    </nav>
+
+    <div id="setBox">
+        <div class="table">
+            <div class="row">
+                <div class="column">书名</div>
+                <div class="column">
+                    <select id="bookName" onchange="getContent()"></select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">章节</div>
+                <div class="column">
+                    <select id="chapter" onchange="getText()"></select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">速度</div>
+                <div class="column">
+                    <span onclick="setSpeakRate(-0.1)">-</span>
+                    <span id="speakRate">1</span>
+                    <span onclick="setSpeakRate(0.1)">+</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">声音</div>
+                <div class="column">
+                    <select id="voiceSelect" onchange="play()"></select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="switch">
+        <button onclick="switchChapter(-1)">上一章</button>
+        <button class="_search" onclick="play()">开始</button>
+        <button onclick="switchChapter(1)">下一章</button>
+    </div><br>
+
+    <div class="switch">
+        <button onclick="pause()">暂停</button>
+        <button onclick="resume()">继续</button>
+        <button onclick="cancel()">清空</button>
+    </div>
+
+    <div id="bottom"></div>
+</body>
+
+</html>

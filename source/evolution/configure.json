@@ -1,0 +1,237 @@
+{
+  "number": [
+    "",
+    "Ⅰ",
+    "Ⅱ",
+    "Ⅲ",
+    "Ⅳ",
+    "Ⅴ",
+    "Ⅵ",
+    "Ⅶ",
+    "Ⅷ",
+    "Ⅸ",
+    "Ⅹ",
+    "ⅩⅠ",
+    "ⅩⅡ",
+    "ⅩⅢ",
+    "ⅩⅣ",
+    "ⅩⅤ",
+    "ⅩⅥ",
+    "ⅩⅦ",
+    "ⅩⅧ",
+    "ⅩⅨ",
+    "ⅩⅩ",
+    "ⅩⅩⅠ",
+    "ⅩⅩⅡ",
+    "max"
+  ],
+  "items": [
+    "原子核",
+    "原子",
+    "DNA",
+    "支原体",
+    "蓝藻",
+    "古菌",
+    "孢子",
+    "草履虫",
+    "珊瑚虫",
+    "文昌鱼",
+    "盾皮鱼",
+    "大白鲨",
+    "大鲵",
+    "巨鳄",
+    "甲龙",
+    "始暴龙",
+    "霸王龙",
+    "生化兽",
+    "机甲兽",
+    "毁灭者",
+    "清理者",
+    "母体"
+  ],
+  "dirtItems": [
+    "细沙",
+    "石块",
+    "巨岩",
+    "小天体",
+    "卫星",
+    "行星",
+    "恒星",
+    "星系",
+    "星系团",
+    "超星系团",
+    "宇宙"
+  ],
+  "price": 1,
+  "initValue": {
+    "items": [
+      {
+        "name": "原子核",
+        "num": {
+        "__class__": "BigNumber",
+        "value": [
+          "0",
+          0
+        ]
+      },
+        "produceLevel": 1,
+        "copyLevel": 1
+      }
+    ],
+    "thunder": {
+      "num": {
+        "__class__": "BigNumber",
+        "value": [
+          "0",
+          0
+        ]
+      },
+      "chaos": 1,
+      "material": 1,
+      "secret": 0,
+      "storage": {
+        "__class__": "BigNumber",
+        "value": [
+          "0",
+          0
+        ]
+      }
+    },
+    "dirtItem": [
+      {
+        "name": "细沙",
+        "num": {
+        "__class__": "BigNumber",
+        "value": [
+          "0",
+          0
+        ]
+      },
+        "produceLevel": 1,
+        "copyLevel": 1
+      }
+    ],
+    "particle": {
+        "__class__": "BigNumber",
+        "value": [
+          "1",
+          1
+        ]
+      },
+    "dirt": {
+        "__class__": "BigNumber",
+        "value": [
+          "0",
+          0
+        ]
+      },
+    "wisdom": {
+      "num": 0,
+      "maxContain": 30000,
+      "brainLevel": 0,
+      "thinking": 0,
+      "technology": [
+        {
+          "name": "电闪雷鸣",
+          "price": 1600
+        },
+        {
+          "name": "时空扭曲",
+          "price": 500
+        },
+        {
+          "name": "粒子碰撞",
+          "price": 1600
+        },
+        {
+          "name": "风尘之变",
+          "price": 1600
+        },
+        {
+          "name": "复制闪电",
+          "price": 12000
+        }
+      ],
+      "neutral": 0,
+      "science": 0
+    },
+    "dark": {
+      "num": {
+        "__class__": "BigNumber",
+        "value": [
+          "0",
+          0
+        ]
+      },
+      "energy": {
+        "__class__": "BigNumber",
+        "value": [
+          "0",
+          0
+        ]
+      },
+      "ability": [
+        {
+          "name": "粒子爆炸",
+          "state": -1,
+          "introduction": "提升粒子系统的分解效率"
+        },
+        {
+          "name": "风起云涌",
+          "state": -1,
+          "introduction": "提升雷电系统的生产效率"
+        },
+        {
+          "name": "沙尘风暴",
+          "state": -1,
+          "introduction": "提升尘埃系统的分解效率"
+        },
+        {
+          "name": "黑暗科学",
+          "state": -1,
+          "introduction": "增强所有科技的力量"
+        },
+        {
+          "name": "高级智慧",
+          "state": -1,
+          "introduction": "提升智慧的生产效率及大脑容量"
+        },
+        {
+          "name": "三位一体",
+          "state": -1,
+          "introduction": "增强电闪雷鸣、粒子碰撞、风尘之变的效果"
+        },
+        {
+          "name": "疯狂复制",
+          "state": -1,
+          "introduction": "提高复制闪电上限"
+        },
+        {
+          "name": "斗转星移",
+          "state": -1,
+          "introduction": "增强时空扭曲的力量"
+        },
+        {
+          "name": "探索黑暗",
+          "state": -1,
+          "introduction": "提升发现暗物质的概率"
+        },
+        {
+          "name": "暗质转化",
+          "state": -1,
+          "introduction": "提升获得暗物质的数量"
+        }
+      ],
+      "explodeNum": 0,
+      "explodePrice": {
+        "__class__": "BigNumber",
+        "value": [
+          "5",
+          6
+        ]
+      }
+    },
+    "record": {},
+    "mail": []
+  }
+}

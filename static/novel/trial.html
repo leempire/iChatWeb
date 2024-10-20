@@ -1,0 +1,13 @@
+<script>
+    function Youdaospeak(text) {
+        //有道接口
+        var url = 'http://tts.youdao.com/fanyivoice?word='+'需要播放的文字'+'&le=zh&keyfrom=speaker-target';
+        var url = 'https://fanyi.sogou.com/reventondc/synthesis?text=需要播放的文字&speed=1&lang=zh-CHS&from=translateweb&speaker=6'
+;
+        audio = new Audio(url);
+        audio.src = url;
+        audio.play();
+    }
+
+    var audio;
+</script>
