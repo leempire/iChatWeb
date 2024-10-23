@@ -55,6 +55,14 @@ create table if not exists read_record(
 	foreign key(book_id) references books(id) on delete cascade
 );
 
+create view shelf_view as (
+select accounts.account, accounts.name, books.name book_name, shelf.process, shelf.last_read, shelf.total_time
+from books, shelf, accounts
+where accounts.id = shelf.account_id and books.id = shelf.book_id
+order by shelf.last_read desc
+);
+
+-- 盐选
 create table if not exists salt(
 	id int primary key,
     date date not null,
