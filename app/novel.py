@@ -5,6 +5,21 @@ from .base import *
 novel = Blueprint('novel', __name__)
 
 
+@novel.route('/novel/addBook/', methods=['POST'])
+def addBook():
+    # post: code, bookName
+    # return: success
+    data = request.values
+    book_name = data.get('bookName')
+    code = data.get('code')
+    id_ = get_id_by_code(code, announce='shelf')
+    if id_ is None:
+        return make_resp('error')
+    order = "insert into books(name, location) values({}, 'source/novel/{}.txt');".format(book_name, book_name)
+    result = sql_manager(order)
+    return make_resp(json.dumps(result))
+
+
 @novel.route('/novel/shelf/', methods=['POST'])
 def shelf():
     # post: code
