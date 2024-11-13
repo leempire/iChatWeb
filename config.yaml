@@ -1,0 +1,21 @@
+email:
+  user: xxxxxxxxx@qq.com
+  code: xxxxxxxxxxxxxxxx
+  server: 
+    - smtp.qq.com
+    - 465
+
+sql:
+  host: 127.0.0.1
+  port: 3306
+  user: root
+  password: xxxxxx
+  database: ichat
+
+flask:
+  host: 0.0.0.0
+  port: 55556
+  waitress: False
+  threaded: True
+  threads: 4
+  debug: True

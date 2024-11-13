@@ -63,7 +63,10 @@ def error(e):
     return redirect('/static/index.html')
 
 
-# from waitress import serve
 if __name__ == '__main__':
-    # serve(root, host='0.0.0.0', port=55556, threads=4)
-    root.run(debug=True, host='0.0.0.0', port=55556, threaded=True)
+    if config.flask.waitress:
+        from waitress import serve
+        serve(root, host=config.flask.host, port=config.flask.port, threads=4)
+    else:
+        root.run(debug=config.flask.debug, host=config.flask.host, 
+                 port=config.flask.port, threaded=config.flask.threaded)
