@@ -143,9 +143,10 @@ function autoReadInit() {
     autoReadFlag = localStorage.getItem('autoReadFlag');
     if (autoReadFlag == 'false') { autoReadFlag = false }
 
-    if (autoScrollOption == 1) { autoScroll1() }
-    else if (autoScrollOption == 2) { autoScroll2() }
-    else { autoScroll1() };
+    // if (autoScrollOption == 1) { autoScroll1() }
+    // else if (autoScrollOption == 2) { autoScroll2() }
+    // else { autoScroll1() };
+    setTimeout(autoScroll2, 2000);
 }
 
 function autoScroll1() {
@@ -212,7 +213,9 @@ if (getPar('chapter') == null) { checkLogged(); }
 else if (getPar('chapter') > 10) { checkLogged(); }
 else { };
 
-addLoadEvent(function () { getText(getProcess) });
+addLoadEvent(function () { 
+    getText(getProcess);
+    autoReadInit();
+});
 setInterval(record, 1000);
 // onfocus = function () { if (getTime() - lastRecord > 2 * 60 * 1000) { jumpToProcess() } };
-setTimeout(autoReadInit, 1000)

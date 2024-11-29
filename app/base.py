@@ -31,7 +31,7 @@ def get_code():
 class EmailSender:
     """南灵邮递员"""
 
-    def __init__(self, user=config.email.user, code=config.email.code, server=config.email.server):
+    def __init__(self, user=config['email']['user'], code=config['email']['code'], server=config['email']['server']):
         """初始化"""
         # 用户和密码
         self.user = user
@@ -97,7 +97,7 @@ def make_resp(content):
 
 
 class SQL:
-    def __init__(self, host=config.sql.host, port=config.sql.port, user=config.sql.user, password=config.sql.password, database=config.sql.database):
+    def __init__(self, host=config['sql']['host'], port=config['sql']['port'], user=config['sql']['user'], password=config['sql']['password'], database=config['sql']['database']):
         self.host, self.port, self.user, self.password, self.database = host, port, user, password, database
 
     def get_con(self):
@@ -166,5 +166,5 @@ class Cloud:
 
 
 cloud_manager = Cloud()
-sql_manager = SQL(host='127.0.0.1', port=3306, user='root', password='xxxxxx')
+sql_manager = SQL()
 code_id = {}

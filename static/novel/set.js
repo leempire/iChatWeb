@@ -3,7 +3,8 @@ function checkForm() {
     var item;
     var items = [
         'color', 'fontFamily', 'fontSize', 'fontWeight', 'lineHeight',
-        'autoReadOption', 'autoScrollOption'
+        'autoReadOption', 
+        // 'autoScrollOption'
     ];
     for (var i = 0; i < items.length; i++) {
         item = items[i];

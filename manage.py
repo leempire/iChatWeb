@@ -66,7 +66,7 @@ def error(e):
 if __name__ == '__main__':
     if config.flask.waitress:
         from waitress import serve
-        serve(root, host=config.flask.host, port=config.flask.port, threads=4)
+        serve(root, host=config['flask']['host'], port=config['flask']['port'], threads=4)
     else:
-        root.run(debug=config.flask.debug, host=config.flask.host, 
-                 port=config.flask.port, threaded=config.flask.threaded)
+        root.run(debug=config['flask']['debug'], host=config['flask']['host'], 
+                 port=config['flask']['port'], threaded=config['flask']['threaded'])
