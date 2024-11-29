@@ -1,0 +1,7 @@
+*_backup*
+source/novel/*.txt
+source/evolution/data/
+source/salt/
+__pycache__/
+*.log
+*.out
