@@ -32,8 +32,8 @@ create table if not exists cloud(
 -- 小说
 create table if not exists books(
 	id int primary key auto_increment,
-	name varchar(40) not null,
-    location varchar(40) not null
+	name varchar(40) not null unique,
+    location varchar(40) not null unique
 );
 
 create table if not exists shelf(
@@ -53,13 +53,6 @@ create table if not exists read_record(
     time datetime not null default current_timestamp,
 	foreign key(account_id) references accounts(id) on delete cascade,
 	foreign key(book_id) references books(id) on delete cascade
-);
-
-create view shelf_view as (
-select accounts.account, accounts.name, books.name book_name, shelf.process, shelf.last_read, shelf.total_time
-from books, shelf, accounts
-where accounts.id = shelf.account_id and books.id = shelf.book_id
-order by shelf.last_read desc
 );
 
 -- 盐选

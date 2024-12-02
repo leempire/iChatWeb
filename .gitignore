@@ -1,4 +1,4 @@
-*_backup*
+config.yaml
 source/novel/*.txt
 source/evolution/data/
 source/salt/
