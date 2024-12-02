@@ -11,6 +11,7 @@ sql:
   user: root
   password: xxxxxx
   database: ichat
+  connection_num: 1
 
 flask:
   host: 0.0.0.0

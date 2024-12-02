@@ -10,10 +10,14 @@ import requests
 import urllib
 import smtplib
 import yaml
+import threading
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 from .bug import Bug
+import sys
+
+sys.stdout.reconfigure(line_buffering=True)
 
 with open('./config.yaml', encoding='utf-8') as f:
     config = yaml.safe_load(f)
@@ -97,23 +101,53 @@ def make_resp(content):
 
 
 class SQL:
-    def __init__(self, host=config['sql']['host'], port=config['sql']['port'], user=config['sql']['user'], password=config['sql']['password'], database=config['sql']['database']):
+    def __init__(self, host=config['sql']['host'], port=config['sql']['port'], user=config['sql']['user'], password=config['sql']['password'], database=config['sql']['database'], connection_num=config['sql']['connection_num']):
         self.host, self.port, self.user, self.password, self.database = host, port, user, password, database
 
-    def get_con(self):
-        con = pymysql.connect(host=self.host, port=self.port, user=self.user,
-                              password=self.password, database=self.database)
-        return con
+        self.connections = [None for _ in range(connection_num)]
+        self.locks = [threading.Lock() for _ in range(connection_num)]
+        self.lock0 = threading.Lock()
+        self.head = 0
+
+    def connect(self):
+        connection = pymysql.connect(host=self.host, 
+                              port=self.port, 
+                              user=self.user,
+                              password=self.password, 
+                              database=self.database)
+        return connection
 
     def __call__(self, order):
         """执行order"""
-        con = self.get_con()
-        cursor = con.cursor()
-        cursor.execute(order)
-        records = cursor.fetchall()
-        cursor.close()
-        con.commit()
-        con.close()
+        target = order.split(' ')[0].lower()
+        if target in ['select']:
+            commit = False
+        elif target in ['update', 'delete', 'insert']:
+            commit = True
+        else:
+            print(order)
+            raise NotImplementedError
+
+        self.lock0.acquire()
+        for _ in range(3):
+            if self.locks[self.head].locked():
+                self.head += 1
+                if self.head == len(self.locks):
+                    self.head = 0
+        pin = self.head
+        self.lock0.release()
+        
+        self.locks[pin].acquire()
+        # 检查连接是否正常
+        if not self.connections[pin] or not self.connections[pin].open:
+            self.connections[pin] = self.connect()
+        # 执行操作
+        with self.connections[pin].cursor() as cursor:
+            cursor.execute(order)
+            records = cursor.fetchall()
+        if commit:
+            self.connections[pin].commit()
+        self.locks[pin].release()
         return records
 
 
