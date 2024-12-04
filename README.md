@@ -33,3 +33,7 @@ python manage.py
 > Q: 怎么往书城中添加小说
 
 A: 将小说的txt文件放入`./source/novel/`文件夹中，然后运行`python add_novel.py`即可。下载小说可使用[novelManager](https://github.com/leempire/novelmanager)程序。
+
+> Q: 响应太慢了怎么办？
+
+A: 如果是mysql相应慢，可以修改`config.yaml`文件中的`sql.connection_num`参数，当用户较少的时候，将该参数设置为1；当用户较多时，将该参数设置更大的值。
