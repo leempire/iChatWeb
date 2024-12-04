@@ -8,7 +8,7 @@ function checkForm() {
     ];
     for (var i = 0; i < items.length; i++) {
         item = items[i];
-        setting[item] = getValueById(item)
+        setting[item] = getValueById(item);
     };
 
     localStorage.setItem('novelStyle', JSON.stringify(setting));

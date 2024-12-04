@@ -42,3 +42,4 @@ A: 将小说的txt文件放入`./source/novel/`文件夹中，然后运行`pytho
 > Q: 响应太慢了怎么办
 
 A: 如果是mysql相应慢，可以修改config.yaml文件中的sql.connection_num参数，当用户较少的时候，将该参数设置为1；当用户较多时，将该参数设置更大的值。
+
