@@ -146,7 +146,7 @@ function autoReadInit() {
     // if (autoScrollOption == 1) { autoScroll1() }
     // else if (autoScrollOption == 2) { autoScroll2() }
     // else { autoScroll1() };
-    setTimeout(autoScroll2, 2000);
+    setTimeout(autoScroll2, 1800);
 }
 
 function autoScroll1() {
@@ -215,7 +215,7 @@ else { };
 
 addLoadEvent(function () { 
     getText(getProcess);
-    autoReadInit();
+    setTimeout(autoReadInit, 200);
 });
 setInterval(record, 1000);
 // onfocus = function () { if (getTime() - lastRecord > 2 * 60 * 1000) { jumpToProcess() } };

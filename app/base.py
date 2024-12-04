@@ -98,7 +98,7 @@ def make_resp(content):
 
 class SQL:
     def __init__(self, host=config['sql']['host'], port=config['sql']['port'], user=config['sql']['user'], password=config['sql']['password'], database=config['sql']['database']):
-        self.host, self.port, self.user, self.password, self.database = host, port, user, password, database
+        self.host, self.port, self.user, self.password, self.database = host, port, user, str(password), database
 
     def get_con(self):
         con = pymysql.connect(host=self.host, port=self.port, user=self.user,
