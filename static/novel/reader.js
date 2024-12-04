@@ -215,7 +215,7 @@ else { };
 
 addLoadEvent(function () { 
     getText(getProcess);
-    setTime(autoReadInit, 200);
+    setTimeout(autoReadInit, 200);
 });
 setInterval(record, 1000);
 // onfocus = function () { if (getTime() - lastRecord > 2 * 60 * 1000) { jumpToProcess() } };

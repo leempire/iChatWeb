@@ -102,7 +102,7 @@ def make_resp(content):
 
 class SQL:
     def __init__(self, host=config['sql']['host'], port=config['sql']['port'], user=config['sql']['user'], password=config['sql']['password'], database=config['sql']['database'], connection_num=config['sql']['connection_num']):
-        self.host, self.port, self.user, self.password, self.database = host, port, user, password, database
+        self.host, self.port, self.user, self.password, self.database = host, port, user, str(password), database
 
         self.connections = [None for _ in range(connection_num)]
         self.locks = [threading.Lock() for _ in range(connection_num)]
