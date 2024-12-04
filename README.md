@@ -25,8 +25,13 @@ pip install -r requirements.txt
 将`./config.yaml.template`文件改名为`./config.yaml`
 
 启动网站服务器
-```commandline
+```bash
 python manage.py
+```
+
+在后端运行
+```bash
+nohup python manage.py > ichat.log 2>&1 &
 ```
 
 ## Q&A
@@ -37,3 +42,4 @@ A: 将小说的txt文件放入`./source/novel/`文件夹中，然后运行`pytho
 > Q: 响应太慢了怎么办？
 
 A: 如果是mysql相应慢，可以修改`config.yaml`文件中的`sql.connection_num`参数，当用户较少的时候，将该参数设置为1；当用户较多时，将该参数设置更大的值。
+

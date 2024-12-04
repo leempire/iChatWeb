@@ -6,11 +6,12 @@ email:
     - 465
 
 sql:
-  host: 127.0.0.1
+  host: localhost
   port: 3306
   user: root
   password: xxxxxx
   database: ichat
+  connection_num: 1
 
 flask:
   host: 0.0.0.0
