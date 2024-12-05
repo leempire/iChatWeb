@@ -3,6 +3,7 @@
 /source/evolution/data/
 /source/salt/
 __pycache__/
+/log/
 *.log
 *.out
 .DS_Store
