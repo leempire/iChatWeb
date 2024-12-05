@@ -142,7 +142,6 @@ class SQL:
         if not self.connections[pin] or not self.connections[pin].open:
             self.connections[pin] = self.connect()
         # 执行操作
-        print(order)
         try:
             with self.connections[pin].cursor() as cursor:
                 cursor.execute(order)
@@ -152,7 +151,6 @@ class SQL:
             with self.connections[pin].cursor() as cursor:
                 cursor.execute(order)
                 records = cursor.fetchall()
-        print(records)
         if commit:
             self.connections[pin].commit()
         self.locks[pin].release()

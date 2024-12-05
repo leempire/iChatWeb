@@ -8,7 +8,7 @@ create table if not exists accounts(
 	id int primary key auto_increment,
     account varchar(20) not null unique,
     password varchar(40) not null,
-    email varchar(80) not null unique,
+    email varchar(80) unique,
     code varchar(20) not null unique
 );
 
