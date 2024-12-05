@@ -1,4 +1,4 @@
-from .base import sql_manager
+from base import sql_manager
 import os
 
 

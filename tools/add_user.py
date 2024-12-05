@@ -1,4 +1,4 @@
-from .base import sql_manager, get_code
+from base import sql_manager, get_code
 import argparse
 
 parser = argparse.ArgumentParser()
