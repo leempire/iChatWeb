@@ -35,4 +35,6 @@ function switchToBook(id) {
 }
 
 checkLogged();
-getShelf();
+addLoadEvent(function () {
+    getShelf();
+});
