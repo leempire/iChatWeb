@@ -144,7 +144,7 @@ def record():
 
 @novel.route('/novel/city/', methods=['POST'])
 def city():
-    order = 'select id, name from books;'
+    order = 'select id, name from books order by id desc;'
     result = sql_manager(order)
     result = json.dumps(result)
     return make_resp(result)
