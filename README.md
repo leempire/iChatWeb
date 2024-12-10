@@ -69,7 +69,7 @@ sudo mysql_secure_installation
 
 备份数据库
 ```bash
-mysqldump ichat -u root -p > ichat_backup.sql;
+mysqldump ichat -u root -p > ichat_backup.sql
 ```
 
 复原数据库
