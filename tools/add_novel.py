@@ -8,13 +8,14 @@ def get_to_insert(ignore):
     for book in books:
         n, t = os.path.splitext(book)
         if t == '.txt':
-            if n not in ignore:
+            if book not in ignore:
                 to_insert.append(n)
     return to_insert
 
 
-results = sql_manager('select name from books;')
-results = [item[0] for item in results]
+results = sql_manager('select location from books;')
+# location: source/novel/xxx.txt
+results = [item[0][13:] for item in results]
 to_insert = get_to_insert(results)
 for n in to_insert:
     sql_manager('insert into books(name, location) values("{}", "source/novel/{}.txt");'.format(n, n))
