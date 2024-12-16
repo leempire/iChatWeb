@@ -12,7 +12,7 @@ def addBook():
     data = request.values
     book_name = data.get('bookName')
     code = data.get('code')
-    id_ = get_id_by_code(code, announce='shelf')
+    id_ = get_id_by_code(code, announce=f'addBook {book_name}')
     if id_ is None:
         return make_resp('error')
     order = "insert into books(name, location) values({}, 'source/novel/{}.txt');".format(book_name, book_name)
@@ -42,7 +42,7 @@ def process():
     data = request.values
     code = data.get('code')
     book_id = data.get('id')
-    id_ = get_id_by_code(code, announce='novelProcess')
+    id_ = get_id_by_code(code, announce=False)
     if id_ is None:
         return make_resp('error')
     order = 'select process from shelf where account_id = {} and book_id = {};'.format(id_, book_id)
@@ -62,6 +62,8 @@ def text():
     book_id = data.get('id')
     chapter = data.get('chapter')
     chapter = int(chapter)
+    code = data.get('code')
+    get_id_by_code(code, announce=f'text {book_id} {chapter}')
     order = 'select location from books where id = {};'.format(book_id)
     location = sql_manager(order)[0][0]
     with open(location, encoding='utf-8') as f:
