@@ -20,8 +20,9 @@ def add_user(account, password, email=None):
         email = 'null'
     else:
         order = 'select id from accounts where email="{}"'.format(email)
-        print('邮箱已存在')
-        return
+        if sql_manager(order):
+            print('邮箱已存在')
+            return
 
     code = get_code()
 
