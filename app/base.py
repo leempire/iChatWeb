@@ -1,5 +1,6 @@
 from flask import Flask, Blueprint, request, make_response, redirect
 import pymysql
+from dbutils.pooled_db import PooledDB
 import random
 import json
 import os
@@ -102,59 +103,37 @@ def make_resp(content):
 
 class SQL:
     def __init__(self, host=config['sql']['host'], port=config['sql']['port'], user=config['sql']['user'], password=config['sql']['password'], database=config['sql']['database'], connection_num=config['sql']['connection_num']):
-        self.host, self.port, self.user, self.password, self.database = host, port, user, str(password), database
-
-        self.connections = [None for _ in range(connection_num)]
-        self.locks = [threading.Lock() for _ in range(connection_num)]
-        self.lock0 = threading.Lock()
-        self.head = 0
-
-    def connect(self):
-        connection = pymysql.connect(host=self.host, 
-                              port=self.port, 
-                              user=self.user,
-                              password=self.password, 
-                              database=self.database)
-        return connection
+        
+        self.pool = PooledDB(creator=pymysql, 
+                             mincached=1,  # 启动时连接数
+                             maxcached=connection_num,  # 最大同时连接数
+                             maxconnections=connection_num,  # 同上
+                             
+                             blocking=True,
+                             ping=1,
+                             host=host, 
+                             port=port,
+                             user=user, 
+                             password=password, 
+                             db=database,
+                             cursorclass=pymysql.cursors.Cursor,
+                             setsession=['SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED']
+)
+        
 
     def __call__(self, order):
         """执行order"""
-        target = order.split(' ')[0].lower()
-        if target in ['select']:
-            commit = False
-        elif target in ['update', 'delete', 'insert']:
-            commit = True
-        else:
-            print(order)
-            raise NotImplementedError
-
-        self.lock0.acquire()
-        for _ in range(3):
-            if self.locks[self.head].locked():
-                self.head += 1
-                if self.head == len(self.locks):
-                    self.head = 0
-        pin = self.head
-        self.lock0.release()
-        
-        self.locks[pin].acquire()
-        # 检查连接是否正常
-        if not self.connections[pin] or not self.connections[pin].open:
-            self.connections[pin] = self.connect()
+        # 获取连接
+        conn = self.pool.connection()
+        cursor = conn.cursor()
         # 执行操作
-        try:
-            with self.connections[pin].cursor() as cursor:
-                cursor.execute(order)
-                records = cursor.fetchall()
-        except Exception:
-            self.connections[pin] = self.connect()
-            with self.connections[pin].cursor() as cursor:
-                cursor.execute(order)
-                records = cursor.fetchall()
-        if commit:
-            self.connections[pin].commit()
-        self.locks[pin].release()
-        return records
+        cursor.execute(order)
+        result = cursor.fetchall()
+        conn.commit()
+        # 关闭连接
+        cursor.close()
+        conn.close()
+        return result
 
 
 def get_id_by_code(code, announce=True):
