@@ -38,7 +38,7 @@ function getProcess() {
 
 function switchChapter(chapter) {
     document.location.href = './reader.html?id=' + getPar('id') +
-        '&chapter=' + chapter;
+        '&chapter=' + chapter + '&fromContent=1';
 };
 
 function download(code, id) {

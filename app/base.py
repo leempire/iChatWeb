@@ -24,6 +24,10 @@ with open('./config.yaml', encoding='utf-8') as f:
     config = yaml.safe_load(f)
 
 
+if not os.path.exists('static/cloud/data'):
+    os.mkdir('static/cloud/data')
+
+
 def get_code():
     while True:
         code = str(random.random())[2:12]
