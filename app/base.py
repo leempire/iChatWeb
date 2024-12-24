@@ -24,10 +24,6 @@ with open('./config.yaml', encoding='utf-8') as f:
     config = yaml.safe_load(f)
 
 
-if not os.path.exists('static/cloud/data'):
-    os.mkdir('static/cloud/data')
-
-
 def get_code():
     while True:
         code = str(random.random())[2:12]
@@ -169,6 +165,8 @@ class Cloud:
     _root = 'static/cloud/data/'
 
     def store(self, filename, id_=None, code=None):
+        if not os.path.exists(self._root):
+            os.mkdir(self._root)
         id_ = id_ or get_id_by_code(code)
         have = os.listdir(self._root)
         have = [os.path.basename(i) for i in have]
