@@ -108,7 +108,7 @@ function getProcess() {
     post(url, data, function (resp) {
         resp = parseFloat(resp);
 	// 如果不是从目录进入，就执行返回原进度的逻辑
-	if (getPar('fromContent') == null) {
+	if (getPar('fromContent') == '') {
             if (Math.abs(resp - parseFloat(getPar('chapter'))) > 2) {
                 if (confirm('是否返回原进度？')) {
                     document.location.href = './reader.html?id=' + getPar('id') + '&chapter=' + resp;

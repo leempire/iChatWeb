@@ -114,7 +114,7 @@ class SQL:
                              host=host, 
                              port=port,
                              user=user, 
-                             password=password, 
+                             password=str(password), 
                              db=database,
                              cursorclass=pymysql.cursors.Cursor,
                              setsession=['SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED']
