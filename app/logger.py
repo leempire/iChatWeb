@@ -7,18 +7,10 @@ from logging.handlers import TimedRotatingFileHandler
 def filter_(record):
     if record.args:
         aa = record.args[0]
-        if aa == 'POST /novel/record/ HTTP/1.1':
-            return False
-        if aa == 'POST /novel/process/ HTTP/1.1':
-            return False
-        if aa == 'GET /favicon.ico HTTP/1.1':
-            return False
-        if aa == 'POST /game/evolution/update/ HTTP/1.1':
-            return False
-        if '.css' in aa:
-            return False
-        if '.js' in aa:
-            return False
+        filt = ['/novel/record/', '/novel/process/', '/favicon.ico', '/game/evolution/update/', '.css', '.js']
+        for i in filt:
+            if i in aa:
+                return False
     return True
 
 
