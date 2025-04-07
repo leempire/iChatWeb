@@ -5,12 +5,10 @@ from logging.handlers import TimedRotatingFileHandler
 
 
 def filter_(record):
-    if record.args:
-        aa = record.args[0]
-        filt = ['/novel/record/', '/novel/process/', '/favicon.ico', '/game/evolution/update/', '.css', '.js']
-        for i in filt:
-            if i in aa:
-                return False
+    filt = ['/novel/record/', '/novel/process/', '/favicon.ico', '/game/evolution/update/', '.css', '.js']
+    for i in filt:
+        if i in str(record):
+            return False
     return True
 
 
