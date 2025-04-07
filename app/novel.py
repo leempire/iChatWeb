@@ -1,5 +1,6 @@
 import shutil
 import threading
+import datetime
 from .base import *
 
 novel = Blueprint('novel', __name__)
@@ -63,7 +64,7 @@ def text():
     chapter = data.get('chapter')
     chapter = int(chapter)
     code = data.get('code')
-    get_id_by_code(code, announce=f'text {book_id} {chapter}')
+    user_id = get_id_by_code(code, announce=f'text {book_id} {chapter}')
     order = 'select location from books where id = {};'.format(book_id)
     location = sql_manager(order)[0][0]
     with open(location, encoding='utf-8') as f:
@@ -74,6 +75,9 @@ def text():
         title = data[0]
         text = data[1:]
     data = json.dumps({'title': title, 'text': text})
+    # 检查是否启动防沉迷
+    if user_id == 2 and 0 <= datetime.datetime.now().hour < 8:
+        return make_resp({'title': title, 'text': ['当前处于防沉迷时间段（0:00~8:00），赶紧睡觉！']})
     return make_resp(data)
 
 
