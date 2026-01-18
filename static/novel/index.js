@@ -31,7 +31,7 @@ function getName(book) {
 }
 
 function switchToBook(id) {
-    document.location.href = './reader.html?id=' + id;
+    switchTo('./reader.html?id=' + id);
 }
 
 checkLogged();

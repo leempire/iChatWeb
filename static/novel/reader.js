@@ -7,8 +7,8 @@ function jumpToProcess() {
         '&id=' + getPar('id');
     post(url, data, function (resp) {
         if (parseInt(resp) != parseInt(getPar('chapter'))) {
-            document.location.href = './reader.html?id=' + getPar('id') +
-                '&chapter=' + resp;
+            switchTo('./reader.html?id=' + getPar('id') +
+                '&chapter=' + resp);
         }
     });
 }
@@ -26,7 +26,7 @@ function getText(afterGet) {
             var title = data['title'];
             var text = data['text']
             if (title == 'exceed') {
-                document.location.href = './reader.html?id=' + id + '&chapter=' + text;
+                switchTo('./reader.html?id=' + id + '&chapter=' + text);
             }
             else {
                 document.getElementById('title').innerHTML = title;
@@ -92,11 +92,11 @@ function getScrollPercent() {
 function switchChapter(page) {
     var chapter = parseInt(getPar('chapter')) + page
     if (chapter < 0) { chapter = 0 };
-    document.location.href = './reader.html?id=' + getPar('id') + '&chapter=' + chapter;
+    switchTo('./reader.html?id=' + getPar('id') + '&chapter=' + chapter);
 };
 
 function swtichToContent() {
-    document.location.href = './content.html?id=' + getPar('id');
+    switchTo('./content.html?id=' + getPar('id'));
 };
 
 function getProcess() {
@@ -107,13 +107,10 @@ function getProcess() {
         '&id=' + getPar('id');
     post(url, data, function (resp) {
         resp = parseFloat(resp);
-	// 如果不是从目录进入，就执行返回原进度的逻辑
-	if (getPar('fromContent') == '') {
-            if (Math.abs(resp - parseFloat(getPar('chapter'))) > 2) {
-                if (confirm('是否返回原进度？')) {
-                    document.location.href = './reader.html?id=' + getPar('id') + '&chapter=' + resp;
-                    return;
-                }
+        if (Math.abs(resp - parseFloat(getPar('chapter'))) > 2) {
+            if (confirm('是否返回原进度？')) {
+                switchTo('./reader.html?id=' + getPar('id') + '&chapter=' + resp);
+                return;
             }
         }
         inited = true;

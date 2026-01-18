@@ -14,6 +14,40 @@ root.register_blueprint(ted)
 root.logger.addHandler(logger)
 
 
+def get_proxy_prefix():
+    """获取代理路径前缀，如果通过nginx代理访问则返回/ichat，否则返回空字符串"""
+    script_name = request.environ.get('HTTP_X_SCRIPT_NAME', '')
+    forwarded_prefix = request.environ.get('HTTP_X_FORWARDED_PREFIX', '')
+    
+    # 优先使用X-Script-Name头
+    if script_name:
+        return script_name.rstrip('/')
+    # 其次使用X-Forwarded-Prefix头
+    elif forwarded_prefix:
+        return forwarded_prefix.rstrip('/')
+    
+    return ''
+
+
+def make_proxy_aware_redirect(url):
+    """创建代理感知的重定向URL"""
+    prefix = get_proxy_prefix()
+    
+    # 如果URL已经是绝对路径或外部URL，直接返回
+    if url.startswith('http') or url.startswith('//'):
+        return redirect(url)
+    
+    # 确保URL以/开头
+    if not url.startswith('/'):
+        url = '/' + url
+    
+    # 添加代理前缀
+    if prefix:
+        url = prefix + url
+    
+    return redirect(url)
+
+
 @root.route('/place/')
 def place():
     ip = request.remote_addr
@@ -44,12 +78,12 @@ def get_video_url():
 
 @root.route('/')
 def index():
-    return redirect('/static/index.html')
+    return make_proxy_aware_redirect('/static/index.html')
 
 
 @root.route('/log/')
 def log_():
-    return redirect('/static/log/index.html')
+    return make_proxy_aware_redirect('/static/log/index.html')
 
 
 @root.route('/favicon.ico')
@@ -60,7 +94,7 @@ def favicon():
 
 @root.errorhandler(404)
 def error(e):
-    return redirect('/static/index.html')
+    return make_proxy_aware_redirect('/static/index.html')
 
 
 if __name__ == '__main__':
