@@ -88,7 +88,7 @@ function getVideosNotWatched() {
 }
 
 function switchToVideo(id) {
-    document.location.href = './watch.html?id=' + id;
+    switchTo('./watch.html?id=' + id);
 }
 
 var autoReadOption;

@@ -1,7 +1,23 @@
 var account;
 
+// 获取代理前缀
+function getProxyPrefix() {
+    // 从当前路径中提取代理前缀
+    var path = window.location.pathname;
+    if (path.startsWith('/ichat/')) {
+        return '/ichat';
+    }
+    return '';
+}
+
 function switchTo(url) {
-    document.location.href = url;
+    // 如果是绝对路径且不是http开头，添加代理前缀
+    if (url.startsWith('/') && !url.startsWith('//') && !url.startsWith('http')) {
+        var prefix = getProxyPrefix();
+        document.location.href = prefix + url;
+    } else {
+        document.location.href = url;
+    }
 };
 
 function getValueById(id) {
@@ -23,7 +39,7 @@ function checkLogged() {
             if (resp == 'not found') {
                 alert('账号发生变动，请重新登录');
                 localStorage.removeItem('code');
-                switchTo('/static/log/index.html?from=' + location.href)
+                switchTo('/static/log/index.html?from=' + location.href);
             }
             else {
                 account = resp;
@@ -37,6 +53,11 @@ function checkLogged() {
 function post(url, data, action) {
     var xml;
     xml = new XMLHttpRequest();
+    // 如果是绝对路径且不是http开头，添加代理前缀
+    if (url.startsWith('/') && !url.startsWith('//') && !url.startsWith('http')) {
+        var prefix = getProxyPrefix();
+        url = prefix + url;
+    }
     xml.open("POST", url, true);
     xml.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     xml.send(data);
@@ -48,6 +69,11 @@ function post(url, data, action) {
 function get(url, action) {
     var xml;
     xml = new XMLHttpRequest();
+    // 如果是绝对路径且不是http开头，添加代理前缀
+    if (url.startsWith('/') && !url.startsWith('//') && !url.startsWith('http')) {
+        var prefix = getProxyPrefix();
+        url = prefix + url;
+    }
     xml.open("GET", url, true);
     xml.send();
     xml.onload = function () {

@@ -1,6 +1,6 @@
 function logOut() {
     localStorage.removeItem('code');
-    document.location.href = './log/index.html';
+    switchTo('./log/index.html');
 };
 
 function getCity() {
