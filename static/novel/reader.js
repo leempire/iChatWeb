@@ -107,10 +107,13 @@ function getProcess() {
         '&id=' + getPar('id');
     post(url, data, function (resp) {
         resp = parseFloat(resp);
-        if (Math.abs(resp - parseFloat(getPar('chapter'))) > 2) {
-            if (confirm('是否返回原进度？')) {
-                switchTo('./reader.html?id=' + getPar('id') + '&chapter=' + resp);
-                return;
+        // 如果不是从目录进入，就执行返回原进度的逻辑
+        if (getPar('fromContent') == '') {
+            if (Math.abs(resp - parseFloat(getPar('chapter'))) > 2) {
+                if (confirm('是否返回原进度？')) {
+                    switchTo('./reader.html?id=' + getPar('id') + '&chapter=' + resp);
+                    return;
+                }
             }
         }
         inited = true;
